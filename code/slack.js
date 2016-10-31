@@ -30,9 +30,7 @@ module.exports = {
                             title: "slumpvard.se",
                             title_link: "http://slumpvard.se",
                             text: result.imageName + "vard",
-                            image_url: url
-                                .replace('url("', '')
-                                .replace('")', ''),
+                            image_url: url,
                             color: "#000",
                             fallback: result.imageName + "vard image"
                         }]
