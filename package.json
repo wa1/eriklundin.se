@@ -1,9 +1,10 @@
 {
-  "name": "node-js-getting-started",
-  "version": "0.2.5",
-  "description": "A sample Node.js app using Express 4",
+  "name": "eriklundin.se",
+  "version": "0.1",
+  "description": "A web application using Node.js 6",
   "engines": {
-    "node": "5.9.1"
+    "node": "6.0.0",
+    "npm": "3.8.6"
   },
   "main": "index.js",
   "scripts": {
