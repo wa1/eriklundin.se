@@ -3,8 +3,7 @@
   "version": "0.1.0",
   "description": "A web application using Node.js 6",
   "engines": {
-    "node": "6.0.0",
-    "npm": "3.8.6"
+    "node": "6.0.0"
   },
   "main": "index.js",
   "scripts": {
@@ -13,11 +12,9 @@
   "dependencies": {
     "ejs": "2.4.1",
     "express": "4.13.3",
-    "cheerio": "0.22.0",
-    "request": "2.75.0",
+    "serve-favicon": "2.3.0",
     "nightmare": "2.8.1",
-    "q": "1.4.1",
-    "serve-favicon":"2.3.0"
+    "q": "1.4.1"
   },
   "repository": {
     "type": "git",
