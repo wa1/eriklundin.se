@@ -12,6 +12,7 @@ module.exports = {
                 ? vard.name.toLowerCase().replace(/å/g, "a").replace(/ä/g, "a").replace(/ö/g, "o")
                 : "slump/slump_" + (Math.floor(Math.random() * numRndImg) + 1);
             return {
+                'response_type': 'in_channel',
                 'attachments': [{
                     title: "slumpvard.se",
                     title_link: "http://slumpvard.se",
