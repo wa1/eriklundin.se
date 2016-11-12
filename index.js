@@ -1,9 +1,6 @@
 var express = require('express');
 var app = express();
 var slack = require('./code/slack');
-var Promise = require('q').Promise;
-var Nightmare = require('nightmare');
-var nightmare = Nightmare();
 var favicon = require('serve-favicon');
 
 // default Heroku setup
@@ -14,20 +11,18 @@ app.set('view engine', 'ejs');
 app.use(favicon(__dirname + '/public/favicons/favicon.ico'));
 
 // routes
-app.get('/', function(request, response) {
+app.get('/', function (request, response) {
     response.render('pages/index');
 });
 
-app.get('/slack_commands/slumpvard', function(request, response) {
-    // TODO: check if there's a way to dynamically route the last part of the url to a slack command, like slack_commands/<variable> and match that to slack.<variable>()
-    var promise = slack.commands.slumpvard();
-    promise.then(function(result){
-        response.json(result);
-    });
+app.get('/slack_commands/slumpvard', function (request, response) {
+    // TODO: dynamically route the last part of the url to a slack command, like if path is slack_commands/<variable>  match that to slack.<variable>()
+    var msg = slack.commands.slumpvard();
+    response.json(msg);
 });
 
 // 404 handling
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.status(404);
     if (req.accepts('html')) {
         res.render('pages/404', {
@@ -45,6 +40,6 @@ app.use(function(req, res, next) {
     res.type('txt').send('404 Not found');
 });
 
-app.listen(app.get('port'), function() {
+app.listen(app.get('port'), function () {
     console.log('Node app is running on port', app.get('port'));
 });
