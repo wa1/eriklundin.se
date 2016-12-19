@@ -1,4 +1,8 @@
-<input id="tick" value="<%= currentTick %>">
-<button class="clipboard-btn" data-clipboard-target="#tick">
-    <i class="fa fa-clipboard" aria-hidden="true" alt="Copy to clipboard"></i>
-</button>
+<div class="input-group">
+    <input class="form-control" type="text" id="tick" value="<%= currentTick %>">
+    <span class="input-group-btn">
+        <button class="btn btn-secondary clipboard-btn" data-clipboard-target="#tick">
+            <i class="fa fa-clipboard" aria-hidden="true" alt="Copy to clipboard"></i>
+        </button>
+    </span>
+</div>
