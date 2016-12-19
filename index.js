@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
-var slack = require('./code/slack');
+var Slack = require('./code/slack');
+var Utils = require('./code/utils');
 var favicon = require('serve-favicon');
 
 // default Heroku setup
@@ -11,18 +12,30 @@ app.set('view engine', 'ejs');
 app.use(favicon(__dirname + '/public/favicons/favicon.ico'));
 
 // routes
-app.get('/', function (request, response) {
-    response.render('pages/index');
+app.get('/', function(request, response) {
+    response.render('pages/index', {
+        currentTick: Utils.getCurrentTick()
+    });
 });
 
-app.get('/slack_commands/slumpvard', function (request, response) {
+app.get('/slack_commands/slumpvard', function(request, response) {
     // TODO: dynamically route the last part of the url to a slack command, like if path is slack_commands/<variable>  match that to slack.<variable>()
-    var msg = slack.commands.slumpvard();
+    var msg = Slack.commands.slumpvard();
+    response.json(msg);
+});
+
+app.get('api/slack/slumpvard', function(request, response) {
+    var msg = Slack.commands.slumpvard();
+    response.json(msg);
+});
+
+app.get('/api/tick', function(request, response) {
+    var msg = Utils.getCurrentTick();
     response.json(msg);
 });
 
 // 404 handling
-app.use(function (req, res, next) {
+app.use(function(req, res, next) {
     res.status(404);
     if (req.accepts('html')) {
         res.render('pages/404', {
@@ -40,6 +53,6 @@ app.use(function (req, res, next) {
     res.type('txt').send('404 Not found');
 });
 
-app.listen(app.get('port'), function () {
+app.listen(app.get('port'), function() {
     console.log('Node app is running on port', app.get('port'));
 });
