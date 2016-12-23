@@ -18,13 +18,8 @@ app.get('/', function(request, response) {
     });
 });
 
-app.get('/slack_commands/slumpvard', function(request, response) {
-    // TODO: dynamically route the last part of the url to a slack command, like if path is slack_commands/<variable>  match that to slack.<variable>()
-    var msg = Slack.commands.slumpvard();
-    response.json(msg);
-});
-
 app.get('/api/slack/slumpvard', function(request, response) {
+    // TODO: dynamically route the last part of the url to a slack command, like if path is slack_commands/<variable>  match that to slack.<variable>()
     var msg = Slack.commands.slumpvard();
     response.json(msg);
 });
