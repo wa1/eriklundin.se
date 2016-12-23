@@ -24,7 +24,7 @@ app.get('/slack_commands/slumpvard', function(request, response) {
     response.json(msg);
 });
 
-app.get('api/slack/slumpvard', function(request, response) {
+app.get('/api/slack/slumpvard', function(request, response) {
     var msg = Slack.commands.slumpvard();
     response.json(msg);
 });
