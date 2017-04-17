@@ -25,7 +25,10 @@ app.get('/api/slack/slumpvard', function(request, response) {
 });
 
 app.get('/api/tick', function(request, response) {
-    var msg = Utils.getCurrentTick();
+    var tick = Utils.getCurrentTick();
+    var msg = {
+        tick: tick
+    }
     response.json(msg);
 });
 
