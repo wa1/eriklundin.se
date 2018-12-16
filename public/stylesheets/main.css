@@ -1,12 +1,33 @@
 body {
-    font-family: Lato, "Helvetica Neue", Helvetica, sans-serif;
+    font-family: Lato, Roboto, sans-serif;
+}
+
+body.darkmode {
+    color: rgb(224, 215, 201) !important;
+    background-color: rgb(25, 25, 26) !important;    
 }
 
 .welcome {
-    color: #999;
-    font-size: 8vmin;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translateX(-50%) translateY(-50%);
 }
+
+.welcome h1{    
+    font-size: 6vmin;
+}
+
+.darkmode input.form-control, 
+.darkmode .input-group-btn>.btn {
+    color: #e0d7c8; 
+    background-color: #19191a;
+    border-color: rgba(224, 215, 200, .5); 
+}
+
+.darkmode ::-moz-selection,
+.darkmode ::selection { 
+    background: #f3f2f0;
+    color: #0f0f10; 
+}
+

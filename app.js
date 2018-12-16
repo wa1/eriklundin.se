@@ -12,24 +12,24 @@ app.set('view engine', 'ejs');
 app.use(favicon(__dirname + '/public/favicons/favicon.ico'));
 
 // routes
-app.get('/', function(request, response) {
-    response.render('pages/index', {
+app.get('/', function(req, res) {
+    res.render('pages/index', {
         currentTick: Utils.getCurrentTick()
     });
 });
 
-app.get('/api/slack/slumpvard', function(request, response) {
+app.get('/api/slack/slumpvard', function(req, res) {
     // TODO: dynamically route the last part of the url to a slack command, like if path is slack_commands/<variable>  match that to slack.<variable>()
     var msg = Slack.commands.slumpvard();
-    response.json(msg);
+    res.json(msg);
 });
 
-app.get('/api/tick', function(request, response) {
+app.get('/api/tick', function(req, res) {
     var tick = Utils.getCurrentTick();
     var msg = {
         tick: tick
     }
-    response.json(msg);
+    res.json(msg);
 });
 
 // 404 handling
