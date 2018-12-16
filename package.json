@@ -4,15 +4,15 @@
   "description": "",
   "main": "app.js",
   "engines": {
-    "node": "^10.0.0"
+    "node": "10.4.0"
   },
   "scripts": {
     "start": "node app.js"
   },
   "dependencies": {
-    "ejs": "^2.6.1",
-    "express": "^4.16.4",
-    "serve-favicon": "^2.5.0"
+    "ejs": "2.6.1",
+    "express": "4.16.4",
+    "serve-favicon": "2.5.0"
   },
   "repository": {
     "type": "git",
