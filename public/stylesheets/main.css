@@ -3,8 +3,8 @@ body {
 }
 
 body.darkmode {
-    color: rgb(224, 215, 201) !important;
-    background-color: rgb(25, 25, 26) !important;    
+    color: #e0d7c8 !important;
+    background-color: #19191a !important;    
 }
 
 .welcome {
@@ -27,7 +27,7 @@ body.darkmode {
 
 .darkmode ::-moz-selection,
 .darkmode ::selection { 
-    background: #f3f2f0;
-    color: #0f0f10; 
+    background-color: #e0d7c8;
+    color: #19191a;
 }
 

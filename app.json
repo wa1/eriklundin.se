@@ -4,5 +4,6 @@
   "repository": "https://github.com/wa1/eriklundin.se",
   "logo": "",
   "keywords": ["node", "express"],
-  "image": ""
+  "image": "",
+  "stack": "heroku-18"
 }
