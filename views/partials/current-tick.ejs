@@ -1,8 +1,13 @@
-<div class="input-group" style="max-width: 230px;margin: 0 auto;">
-    <input class="form-control" type="text" id="tick" value="<%= currentTick %>">
-    <span class="input-group-btn">
-        <button class="btn btn-secondary clipboard-btn" data-clipboard-target="#tick">
-            <i class="fa fa-clipboard" aria-hidden="true" alt="Copy to clipboard"></i>
-        </button>
-    </span>
+<div class="input-group" style="min-width: 250px;margin: 0 auto;">
+    <input class="form-control" type="text" id="tick" value="<%= currentTick %>" aria-label="Approximate  tick"
+        readonly>
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary clipboard-btn" type="button" data-clipboard-target="#tick"><i class="far fa-clipboard"
+                aria-hidden="true" alt="Copy to clipboard"></i></button>
+    </div>
+
 </div>
+<a href="#" class="float-right" tabindex="0" data-container="body" data-placement="bottom" data-content="The number displayed is the number of ticks since 00:00:00 UTC on January 1, 0001, in the Gregorian calendar. No, it does not account for leap seconds. 1 tick = 100 nanoseconds, there are 10 million ticks in a second. The story of why I have it on my website is slightly longer, ask me (check your devtools console)."
+    data-toggle="popover" title="Hundreds of nanoseconds since start of year 1">
+    <span class="small">Huh?</span>
+</a>

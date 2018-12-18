@@ -15,11 +15,11 @@ body.darkmode {
 }
 
 .welcome h1{    
-    font-size: 6vmin;
+    font-size: 9vmin;
 }
 
 .darkmode input.form-control, 
-.darkmode .input-group-btn>.btn {
+.darkmode .input-group-append>.btn {
     color: #e0d7c8; 
     background-color: #19191a;
     border-color: rgba(224, 215, 200, .5); 
@@ -31,3 +31,16 @@ body.darkmode {
     color: #19191a;
 }
 
+.darkmode .popover,
+.darkmode .popover-header,
+.darkmode .popover-body
+{
+    background-color: #313133;
+    color: #e0d7c8;     
+    border-color: inherit;
+}
+
+.darkmode a,
+.darkmode a:hover{
+    color: #e0d7c8; 
+}
