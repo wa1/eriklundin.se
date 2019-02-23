@@ -1,10 +1,19 @@
+:root {
+    --dark-bg-color: #19191a;
+    --dark-color: #e0d7c8;
+}
+
+html {
+    font-size: 16px;
+}
+
 body {
     font-family: Lato, Roboto, sans-serif;
 }
 
-body.darkmode {
-    color: #e0d7c8 !important;
-    background-color: #19191a !important;    
+.darkmode {
+    color: var(--dark-color) !important;
+    background-color: var(--dark-bg-color) !important;
 }
 
 .welcome {
@@ -14,33 +23,33 @@ body.darkmode {
     transform: translateX(-50%) translateY(-50%);
 }
 
-.welcome h1{    
-    font-size: 9vmin;
+.welcome h1 {
+    font-size: 6rem;
 }
 
-.darkmode input.form-control, 
-.darkmode .input-group-append>.btn {
-    color: #e0d7c8; 
-    background-color: #19191a;
-    border-color: rgba(224, 215, 200, .5); 
+.darkmode input.form-control, .darkmode .input-group-append>.btn {
+    color: var(--dark-color);
+    background-color: var(--dark-bg-color);
+    border-color: rgba(224, 215, 200, .5);
 }
 
-.darkmode ::-moz-selection,
-.darkmode ::selection { 
-    background-color: #e0d7c8;
-    color: #19191a;
+.darkmode ::-moz-selection, .darkmode ::selection {
+    background-color: var(--dark-color);
+    color: var(--dark-bg-color);
 }
 
-.darkmode .popover,
-.darkmode .popover-header,
-.darkmode .popover-body
-{
+.darkmode .popover, .darkmode .popover-header, .darkmode .popover-body {
     background-color: #313133;
-    color: #e0d7c8;     
+    color: var(--dark-color);
     border-color: inherit;
 }
 
-.darkmode a,
-.darkmode a:hover{
-    color: #e0d7c8; 
+.darkmode a, .darkmode a:hover {
+    color: var(--dark-color);
+}
+
+@media only screen and (max-width: 640px) {
+    .welcome h1 {
+        font-size: 3rem;
+    }
 }
