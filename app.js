@@ -9,7 +9,7 @@ app.set('port', (process.env.PORT || 5000));
 app.use(express.static(__dirname + '/public'));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
-app.use(favicon(__dirname + '/public/favicons/favicon.ico'));
+app.use(favicon(__dirname + '/public/favicon.ico'));
 
 // routes
 app.get('/', function(req, res) {
