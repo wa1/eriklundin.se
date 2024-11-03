@@ -1,4 +1,4 @@
-# eriklundin.se
+# Website
 
 A node.js web app, uses Express and EJS.
 
